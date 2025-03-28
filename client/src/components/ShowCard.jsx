@@ -30,8 +30,7 @@ function ShowCard({ places, setText,text }) {
                                 href={place.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-gray-800 hover:text-blue-600 hover:underline"
-                            >
+                                className="text-gray-800 hover:text-blue-600 hover:underline">
                                 {place.title}
                             </a>
                         </h2>
