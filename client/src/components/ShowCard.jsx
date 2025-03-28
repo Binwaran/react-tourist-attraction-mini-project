@@ -17,7 +17,7 @@ function ShowCard({ places, setText,text }) {
             {places.map((place,index)=>( 
                 <div 
                     key={index}
-                    className="flex bg-white rounded-lg shadow-md overflow-hidden p-4">
+                    className="flex bg-white rounded-lg shadow-md overflow-hidden p-4 transition duration-300 hover:scale-105 hover:shadow-lg">
                     <div className="w-1/3">
                         <img 
                             src={place.photos[0]} 
