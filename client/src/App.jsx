@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import SearchSection from './components/SearchSection'
+import ShowCard from './components/ShowCard'
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
   return (
     <>
     <SearchSection/>
+    <ShowCard/>
      
     </>
   )
