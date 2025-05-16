@@ -36,6 +36,18 @@ npm start
 
 5.OOpen your browser and go to http://localhost:3000 to see the application in action.
 
+![Screenshot 2025-05-16 121514](https://github.com/user-attachments/assets/3ef76317-dd3c-4e6d-9300-1cd24e6f0f1b)
+
+Home page displaying a list of tourist attractions.
+Search results for a specific keyword.
+
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Developed by Binwaran
+
+
+
 
 
 
