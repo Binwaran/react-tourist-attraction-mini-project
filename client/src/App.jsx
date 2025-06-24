@@ -9,9 +9,10 @@ function App() {
 
   // ดึงข้อมูลจาก server
   useEffect(() => {
+    const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:4001";
     const url = text.trim() === ""
-      ? "http://localhost:4001/trips"
-      : `http://localhost:4001/trips?keywords=${text}`;
+      ? `${API_BASE}/trips`
+      : `${API_BASE}/trips?keywords=${text}`;
 
     fetch(url)
       .then((res) => res.json())

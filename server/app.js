@@ -4,7 +4,9 @@ import cors from "cors";
 import trips from "./db.js";
 
 const app = express();
-const port = 4001;
+
+// ✅ เปลี่ยนจาก fix port → ดึงจาก process.env
+const PORT = process.env.PORT || 4001;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -16,14 +18,12 @@ app.get("/", (req, res) => {
 app.get("/trips", (req, res) => {
   let keywords = req.query.keywords;
 
-  // ถ้าไม่ส่ง keywords มาเลย → ส่ง trips ทั้งหมด
   if (!keywords) {
     return res.json({
       data: trips,
     });
   }
 
-  // ถ้ามี keywords → ใช้ regex filter
   const regexKeywords = keywords.split(" ").join("|");
   const regex = new RegExp(regexKeywords, "ig");
   const results = trips.filter((trip) => {
@@ -39,7 +39,6 @@ app.get("/trips", (req, res) => {
   });
 });
 
-// เพิ่ม route สำหรับ /trips/:id
 app.get("/trips/:id", (req, res) => {
   const id = req.params.id;
   const result = trips.find((trip) => trip?.eid?.toString() === id);
@@ -51,6 +50,7 @@ app.get("/trips/:id", (req, res) => {
   return res.json(result);
 });
 
-app.listen(port, () => {
-  console.log(`Server is running at port ${port}`);
+// ✅ ต้องใช้ PORT จาก env
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
